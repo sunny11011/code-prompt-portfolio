@@ -106,71 +106,7 @@ const Index = () => {
         break;
       
       case 'interests':
-        addOutputLine(`<div class="space-y-6">
-  <div class="border border-border rounded-lg p-4 bg-muted/10">
-    <h3 class="text-primary font-bold mb-3 flex items-center gap-2">
-      <span class="text-accent">🎯</span> Personal Interests
-    </h3>
-    <ul class="space-y-2">
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Reading tech blogs and staying updated with latest technologies</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Learning new programming languages and frameworks</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Contributing to open-source projects</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Playing cricket and football</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Watching movies and series</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Traveling and exploring new places</span>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="border border-border rounded-lg p-4 bg-muted/10">
-    <h3 class="text-primary font-bold mb-3 flex items-center gap-2">
-      <span class="text-accent">💼</span> Professional Interests
-    </h3>
-    <ul class="space-y-2">
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Mobile app development with Flutter</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Cross-platform development</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>UI/UX design principles</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Backend development with Node.js</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>Cloud services and deployment</span>
-      </li>
-      <li class="flex items-start gap-2">
-        <span class="text-primary mt-1">→</span>
-        <span>DevOps and CI/CD pipelines</span>
-      </li>
-    </ul>
-  </div>
-</div>`);
+        addOutputLine('Loading personal interests...\n');
         setTimeout(() => {
           setCurrentSection('interests');
         }, 800);
@@ -205,32 +141,16 @@ Use these commands to navigate through my portfolio.
       case 'home':
       case 'welcome':
         setCurrentSection('welcome');
-        addOutputLine(`<div class="text-center py-4">
-  <div class="text-foreground text-xs sm:text-sm md:text-base font-bold whitespace-pre-line mb-2">
-██╗   ██╗███████╗███╗   ███╗ █████╗ ███╗   ██╗
-██║   ██║██╔════╝████╗ ████║██╔══██╗████╗  ██║
-██║   ██║███████╗██╔████╔██║███████║██╔██╗ ██║
-██║   ██║╚════██║██║╚██╔╝██║██╔══██║██║╚██╗██║
-╚██████╔╝███████║██║ ╚═╝ ██║██║  ██║██║ ╚████║
- ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
-                                              
-███████╗██╗  ██╗ █████╗ ██╗  ██╗ █████╗ ██████╗ 
-██╔════╝██║  ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
-███████╗███████║███████║███████║███████║██████╔╝
-╚════██║██╔══██║██╔══██║██╔══██║██╔══██║██╔══██╗
-███████║██║  ██║██║  ██║██║  ██║██║  ██║██████╔╝
-╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
-  </div>
-  <div class="text-primary text-xs sm:text-sm md:text-base font-bold mt-2 whitespace-pre-line">
-██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
-██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
-██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
-██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
-██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
-╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
-  </div>
-  <div class="text-accent text-sm mt-4">Full-Stack Developer & Problem Solver</div>
-</div>
+        addOutputLine(`
+╔════════════════════════════════════════╗
+║                                        ║
+║           USMAN SHAHAB                 ║
+║           PORTFOLIO                    ║
+║                                        ║
+║    Full-Stack Developer & Problem      ║
+║            Solver                      ║
+║                                        ║
+╚════════════════════════════════════════╝
 
 Available commands:
 • about      - Learn about me
@@ -466,14 +386,14 @@ Type 'help' for available commands.`, 'error');
             <div className="flex-1 bg-terminal-bg border-l border-r border-b border-border overflow-hidden flex flex-col">
               <div 
                 ref={outputRef}
-                className="flex-1 p-4 overflow-y-auto space-y-2 font-mono text-sm"
+                className="flex-1 p-2 sm:p-4 overflow-y-auto space-y-2 font-mono text-sm"
                 style={{ scrollBehavior: 'smooth' }}
               >
                 <TerminalOutput lines={outputLines} />
                 
                 {/* Show styled content inside terminal for certain commands */}
                 {currentSection !== 'welcome' && (
-                  <div className="mt-4 p-4 bg-muted/20 rounded border border-border">
+                  <div className="mt-4 p-2 sm:p-4 bg-muted/20 rounded border border-border">
                     {currentSection === 'about' && <About />}
                     {currentSection === 'projects' && <Projects />}
                     {currentSection === 'skills' && <Skills />}
@@ -484,25 +404,27 @@ Type 'help' for available commands.`, 'error');
                   </div>
                 )}
               </div>
-              <div className="border-t border-border bg-muted/10 p-2 space-y-3">
+              <div className="border-t border-border bg-muted/10 p-2">
                 <CommandPrompt 
                   onCommand={handleCommand}
                   isActive={!isProcessing}
                 />
-                
-                {/* Section Navigation Buttons */}
-                <div className="flex flex-wrap gap-2">
-                  {['about', 'skills', 'projects', 'achievements', 'education', 'interests', 'contact'].map((section) => (
-                    <button
-                      key={section}
-                      onClick={() => handleCommand(section)}
-                      className="px-3 py-1 text-xs bg-muted/30 border border-border rounded hover:bg-muted/50 transition-colors capitalize"
-                    >
-                      {section}
-                    </button>
-                  ))}
-                </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Section Navigation Buttons - Outside Terminal */}
+          <div className="mx-4 mb-4 ml-2">
+            <div className="flex flex-wrap gap-2 p-3 bg-muted/20 rounded border border-border">
+              {['about', 'skills', 'projects', 'achievements', 'education', 'interests', 'contact'].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => handleCommand(section)}
+                  className="px-3 py-1 text-xs bg-muted/30 border border-border rounded hover:bg-muted/50 transition-colors capitalize"
+                >
+                  {section}
+                </button>
+              ))}
             </div>
           </div>
         </div>

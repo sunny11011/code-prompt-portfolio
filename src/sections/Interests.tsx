@@ -1,224 +1,149 @@
 import React from 'react';
-import TypewriterText from '../components/TypewriterText';
 
 const Interests: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-2 mb-4">
-        <span className="syntax-comment">// interests.json</span>
+        <span className="syntax-comment"># interests.md</span>
       </div>
       
-      <div className="space-y-4">
-        <div className="flex items-center gap-2">
-          <span className="text-foreground">{"{"}</span>
-        </div>
-        
-        <div className="pl-6 space-y-6">
+      <div className="space-y-6">
+        <div className="section-card bg-muted/5">
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="syntax-string">"cybersecurity":</span>
-              <span className="text-foreground">[</span>
-            </div>
-            
-            <div className="pl-6 space-y-2">
-              <TypewriterText 
-                text='"Ethical Hacking & Penetration Testing",'
-                speed={20}
-                delay={1000}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Network Security & Vulnerability Assessment",'
-                speed={20}
-                delay={1500}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Cryptography & Encryption Algorithms",'
-                speed={20}
-                delay={2000}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Bug Bounty Programs & Responsible Disclosure"'
-                speed={20}
-                delay={2500}
-                className="syntax-string text-sm"
-              />
-            </div>
-            
-            <span className="text-foreground">],</span>
-          </div>
-          
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="syntax-string">"technical_hobbies":</span>
-              <span className="text-foreground">[</span>
-            </div>
-            
-            <div className="pl-6 space-y-2">
-              <TypewriterText 
-                text='"Building IoT Projects with Raspberry Pi",'
-                speed={20}
-                delay={3000}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Contributing to Open Source Projects",'
-                speed={20}
-                delay={3500}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Machine Learning & AI Experimentation",'
-                speed={20}
-                delay={4000}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Blockchain & Smart Contract Development",'
-                speed={20}
-                delay={4500}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Home Lab Setup & Self-hosting Services"'
-                speed={20}
-                delay={5000}
-                className="syntax-string text-sm"
-              />
-            </div>
-            
-            <span className="text-foreground">],</span>
-          </div>
-          
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="syntax-string">"learning_goals":</span>
-              <span className="text-foreground">{"{"}</span>
-            </div>
-            
-            <div className="pl-6 space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="syntax-string">"2024":</span>
-                <span className="text-foreground">[</span>
+            <h3 className="syntax-string font-semibold flex items-center gap-2">
+              <span className="text-accent">🎯</span> Personal Interests
+            </h3>
+            <div className="pl-4 space-y-2">
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Reading tech blogs and staying updated with latest technologies</span>
               </div>
-              
-              <div className="pl-6 space-y-1">
-                <TypewriterText 
-                  text='"Master Kubernetes & Container Orchestration",'
-                  speed={15}
-                  delay={5500}
-                  className="syntax-string text-sm"
-                />
-                <TypewriterText 
-                  text='"Learn Rust Programming Language",'
-                  speed={15}
-                  delay={6000}
-                  className="syntax-string text-sm"
-                />
-                <TypewriterText 
-                  text='"Advance in Cloud-Native Architecture"'
-                  speed={15}
-                  delay={6500}
-                  className="syntax-string text-sm"
-                />
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Learning new programming languages and frameworks</span>
               </div>
-              
-              <span className="text-foreground">],</span>
-              
-              <div className="flex items-center gap-2">
-                <span className="syntax-string">"future":</span>
-                <span className="text-foreground">[</span>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Contributing to open-source projects</span>
               </div>
-              
-              <div className="pl-6 space-y-1">
-                <TypewriterText 
-                  text='"Quantum Computing Fundamentals",'
-                  speed={15}
-                  delay={7000}
-                  className="syntax-string text-sm"
-                />
-                <TypewriterText 
-                  text='"Advanced AI/ML Engineering",'
-                  speed={15}
-                  delay={7500}
-                  className="syntax-string text-sm"
-                />
-                <TypewriterText 
-                  text='"Entrepreneurship & Tech Leadership"'
-                  speed={15}
-                  delay={8000}
-                  className="syntax-string text-sm"
-                />
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Playing cricket and football</span>
               </div>
-              
-              <span className="text-foreground">]</span>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Watching movies and series</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Traveling and exploring new places</span>
+              </div>
             </div>
-            
-            <span className="text-foreground">{"}"}</span>
-          </div>
-          
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="syntax-string">"personal_activities":</span>
-              <span className="text-foreground">[</span>
-            </div>
-            
-            <div className="pl-6 space-y-2">
-              <TypewriterText 
-                text='"Rock Climbing & Outdoor Adventures",'
-                speed={20}
-                delay={8500}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Photography & Digital Art",'
-                speed={20}
-                delay={9000}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Chess & Strategic Board Games",'
-                speed={20}
-                delay={9500}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Podcast Host: \\"Code & Coffee\\"",'
-                speed={20}
-                delay={10000}
-                className="syntax-string text-sm"
-              />
-              <TypewriterText 
-                text='"Mentoring Aspiring Developers"'
-                speed={20}
-                delay={10500}
-                className="syntax-string text-sm"
-              />
-            </div>
-            
-            <span className="text-foreground">]</span>
           </div>
         </div>
         
-        <div className="mt-6">
-          <TypewriterText 
-            text="}"
-            speed={30}
-            delay={11000}
-            className="text-foreground"
-          />
+        <div className="section-card bg-muted/5">
+          <div className="space-y-3">
+            <h3 className="syntax-string font-semibold flex items-center gap-2">
+              <span className="text-accent">💼</span> Professional Interests
+            </h3>
+            <div className="pl-4 space-y-2">
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Mobile app development with Flutter</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Cross-platform development</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">UI/UX design principles</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Backend development with Node.js</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Cloud services and deployment</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">DevOps and CI/CD pipelines</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section-card bg-muted/5">
+          <div className="space-y-3">
+            <h3 className="syntax-string font-semibold flex items-center gap-2">
+              <span className="text-accent">🎯</span> Learning Goals
+            </h3>
+            <div className="pl-4 space-y-2">
+              <div className="syntax-comment text-sm">// 2024 Focus Areas:</div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Master Kubernetes & Container Orchestration</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Learn Rust Programming Language</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Advance in Cloud-Native Architecture</span>
+              </div>
+              
+              <div className="syntax-comment text-sm mt-3">// Future Goals:</div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Quantum Computing Fundamentals</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Advanced AI/ML Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section-card bg-muted/5">
+          <div className="space-y-3">
+            <h3 className="syntax-string font-semibold flex items-center gap-2">
+              <span className="text-accent">🎮</span> Hobbies & Activities
+            </h3>
+            <div className="pl-4 space-y-2">
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Building IoT projects with Raspberry Pi</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Photography & digital art</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Chess & strategic board games</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Home lab setup & self-hosting services</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-primary mt-1">→</span>
+                <span className="text-muted-foreground">Mentoring aspiring developers</span>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <div className="mt-6 p-4 border border-border rounded bg-muted/10">
-          <TypewriterText 
-            text={`// Fun fact: I've built a custom keyboard with mechanical switches 
-// and programmed it to execute terminal commands with single keystrokes! ⌨️`}
-            speed={15}
-            delay={11500}
-            className="syntax-comment text-sm"
-          />
+        <div className="p-4 border border-border rounded bg-muted/10">
+          <div className="syntax-comment text-sm">
+            // Fun fact: I've built a custom mechanical keyboard and programmed it 
+            // to execute terminal commands with single keystrokes! ⌨️
+          </div>
         </div>
       </div>
     </div>

@@ -99,19 +99,21 @@ const Skills: React.FC = () => {
       <div className="pl-6 space-y-4">
         <div className="syntax-comment">{getCategoryComment(selectedCategory)}</div>
         
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
           {filteredSkills.map((skill) => (
             <div key={skill.name} className="section-card">
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="syntax-string font-medium">{skill.name}</span>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <span className="syntax-string font-medium text-sm sm:text-base">{skill.name}</span>
                   <div className="flex items-center gap-2">
-                    {getSkillBar(skill.level)}
+                    <div className="flex items-center gap-1">
+                      {getSkillBar(skill.level)}
+                    </div>
                     <span className="syntax-number text-sm">{skill.level}/10</span>
                   </div>
                 </div>
                 
-                <p className="text-muted-foreground text-sm">{skill.description}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm">{skill.description}</p>
                 
                 <div className="flex items-center gap-2">
                   <span className="syntax-keyword text-xs px-2 py-1 bg-muted rounded">

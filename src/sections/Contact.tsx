@@ -73,22 +73,22 @@ const Contact: React.FC = () => {
           <div className="pl-6 space-y-4">
             {contactMethods.map((method, index) => (
               <div key={method.id} className="space-y-2">
-                <div className="syntax-comment">{`// ${method.description}`}</div>
+                <div className="syntax-comment text-xs sm:text-sm">{`// ${method.description}`}</div>
                 <div 
                   className="section-card cursor-pointer hover:bg-muted/20 transition-all duration-200"
                   onClick={() => handleContact(method)}
                 >
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="syntax-keyword">{method.name}:</span>
-                        <span className="syntax-string">"{method.value}"</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                        <span className="syntax-keyword text-sm">{method.name}:</span>
+                        <span className="syntax-string text-xs sm:text-sm break-all">"{method.value}"</span>
                       </div>
                       {selectedMethod === method.id && (
                         <span className="text-accent text-sm">Copied!</span>
                       )}
                     </div>
-                    <div className="text-muted-foreground text-sm">
+                    <div className="text-muted-foreground text-xs sm:text-sm">
                       Click to {method.command.startsWith('http') ? 'open' : method.command.startsWith('mailto') ? 'send email' : 'copy'}
                     </div>
                   </div>
@@ -139,22 +139,22 @@ const Contact: React.FC = () => {
       {/* Quick Actions */}
       <div className="pl-6 mt-8 space-y-4">
         <div className="syntax-comment">// Quick actions:</div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3">
           <button
             onClick={() => handleContact(contactMethods[0])}
-            className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
+            className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
           >
             Send Email
           </button>
           <button
             onClick={() => window.open('https://calendly.com/alexchen-dev', '_blank')}
-            className="px-4 py-2 bg-accent text-accent-foreground rounded hover:bg-accent/90 transition-colors"
+            className="px-4 py-2 text-sm bg-accent text-accent-foreground rounded hover:bg-accent/90 transition-colors"
           >
             Schedule Call
           </button>
           <button
             onClick={() => handleContact(contactMethods[2])}
-            className="px-4 py-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90 transition-colors"
+            className="px-4 py-2 text-sm bg-secondary text-secondary-foreground rounded hover:bg-secondary/90 transition-colors"
           >
             View GitHub
           </button>

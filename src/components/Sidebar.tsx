@@ -34,7 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFileClick, isCollapsed, onToggle })
       },
     { name: 'achievements.log', type: 'file', command: 'achievements', extension: 'log' },
     { name: 'education.md', type: 'file', command: 'education', extension: 'md' },
-    { name: 'interests.json', type: 'file', command: 'interests', extension: 'json' },
+    { name: 'interests.md', type: 'file', command: 'interests', extension: 'md' },
     { name: 'contact_me.sh', type: 'file', command: 'contact', extension: 'sh' }
   ];
 
@@ -113,7 +113,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFileClick, isCollapsed, onToggle })
   };
 
   return (
-    <div className={`bg-muted/20 border border-border rounded-lg transition-all duration-300 h-full overflow-y-auto ${
+    <div className={`bg-muted/20 border border-border rounded-lg transition-all duration-300 h-screen overflow-y-auto ${
       isCollapsed ? 'w-12' : 'w-80'
     }`}>
       <div className="p-4 border-b border-border">

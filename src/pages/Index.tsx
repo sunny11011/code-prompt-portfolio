@@ -22,8 +22,8 @@ const Index = () => {
   const outputRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Show welcome screen initially
-    setCurrentSection('welcome');
+    // Show welcome screen initially with ASCII art
+    handleCommand('welcome');
   }, []);
 
   useEffect(() => {
@@ -106,7 +106,7 @@ const Index = () => {
         break;
       
       case 'interests':
-        addOutputLine('Parsing personal interests...\n');
+        addOutputLine('Loading personal interests and hobbies...\n');
         setTimeout(() => {
           setCurrentSection('interests');
         }, 800);
@@ -141,7 +141,26 @@ Use these commands to navigate through my portfolio.
       case 'home':
       case 'welcome':
         setCurrentSection('welcome');
-        addOutputLine('Returning to welcome screen...\n');
+        addOutputLine(`Welcome to the Portfolio Terminal!
+
+██╗   ██╗███████╗███╗   ███╗ █████╗ ███╗   ██╗    ███████╗██╗  ██╗ █████╗ ██╗  ██╗ █████╗ ██████╗ 
+██║   ██║██╔════╝████╗ ████║██╔══██╗████╗  ██║    ██╔════╝██║  ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
+██║   ██║███████╗██╔████╔██║███████║██╔██╗ ██║    ███████╗███████║███████║███████║███████║██████╔╝
+██║   ██║╚════██║██║╚██╔╝██║██╔══██║██║╚██╗██║    ╚════██║██╔══██║██╔══██║██╔══██║██╔══██║██╔══██╗
+╚██████╔╝███████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    ███████║██║  ██║██║  ██║██║  ██║██║  ██║██████╔╝
+ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+
+                                     ██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+                                     ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+                                     ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+                                     ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+                                     ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+                                     ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+
+Full-Stack Developer & Problem Solver
+
+Type 'help' to see available commands or explore using the file structure on the left.
+`);
         break;
       
       case 'ls':
@@ -383,38 +402,9 @@ Type 'help' for available commands.`, 'error');
         </div>
         
         {/* Main Content - Terminal Only */}
-        <div className="flex-1 flex flex-col">
-          {/* Welcome Section - Only show when no active section */}
-          {currentSection === 'welcome' && (
-            <div className="flex-1 flex flex-col items-center justify-center text-center mb-6">
-              <div className="max-w-2xl mx-auto space-y-6">
-                <div className="space-y-4">
-                  <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Welcome to Usman's Portfolio
-                  </h1>
-                  <p className="text-lg text-muted-foreground">
-                    Full-Stack Developer & Problem Solver
-                  </p>
-                </div>
-                
-                <div className="space-y-3">
-                  <p className="text-base text-foreground">
-                    Navigate through my portfolio using the terminal below or the file explorer on the left.
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {['about', 'skills', 'projects', 'education', 'achievements', 'interests', 'contact'].map((cmd) => (
-                      <span key={cmd} className="px-2 py-1 bg-muted rounded-md font-mono text-xs">
-                        {cmd}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
+        <div className="flex-1 flex flex-col h-screen">
           {/* Terminal */}
-          <div className="flex-1 flex flex-col terminal-window">
+          <div className="flex-1 flex flex-col terminal-window h-full">
             <TerminalHeader title="usman@portfolio-terminal: ~" />
             <div className="flex-1 bg-terminal-bg border-l border-r border-b border-border overflow-hidden flex flex-col">
               <div 

@@ -106,7 +106,71 @@ const Index = () => {
         break;
       
       case 'interests':
-        addOutputLine('Loading personal interests and hobbies...\n');
+        addOutputLine(`<div class="space-y-6">
+  <div class="border border-border rounded-lg p-4 bg-muted/10">
+    <h3 class="text-primary font-bold mb-3 flex items-center gap-2">
+      <span class="text-accent">🎯</span> Personal Interests
+    </h3>
+    <ul class="space-y-2">
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Reading tech blogs and staying updated with latest technologies</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Learning new programming languages and frameworks</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Contributing to open-source projects</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Playing cricket and football</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Watching movies and series</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Traveling and exploring new places</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="border border-border rounded-lg p-4 bg-muted/10">
+    <h3 class="text-primary font-bold mb-3 flex items-center gap-2">
+      <span class="text-accent">💼</span> Professional Interests
+    </h3>
+    <ul class="space-y-2">
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Mobile app development with Flutter</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Cross-platform development</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>UI/UX design principles</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Backend development with Node.js</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>Cloud services and deployment</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-primary mt-1">→</span>
+        <span>DevOps and CI/CD pipelines</span>
+      </li>
+    </ul>
+  </div>
+</div>`);
         setTimeout(() => {
           setCurrentSection('interests');
         }, 800);
@@ -141,26 +205,45 @@ Use these commands to navigate through my portfolio.
       case 'home':
       case 'welcome':
         setCurrentSection('welcome');
-        addOutputLine(`Welcome to the Portfolio Terminal!
+        addOutputLine(`<div class="text-center py-4">
+  <div class="text-foreground text-xs sm:text-sm md:text-base font-bold whitespace-pre-line mb-2">
+██╗   ██╗███████╗███╗   ███╗ █████╗ ███╗   ██╗
+██║   ██║██╔════╝████╗ ████║██╔══██╗████╗  ██║
+██║   ██║███████╗██╔████╔██║███████║██╔██╗ ██║
+██║   ██║╚════██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+╚██████╔╝███████║██║ ╚═╝ ██║██║  ██║██║ ╚████║
+ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+                                              
+███████╗██╗  ██╗ █████╗ ██╗  ██╗ █████╗ ██████╗ 
+██╔════╝██║  ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
+███████╗███████║███████║███████║███████║██████╔╝
+╚════██║██╔══██║██╔══██║██╔══██║██╔══██║██╔══██╗
+███████║██║  ██║██║  ██║██║  ██║██║  ██║██████╔╝
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+  </div>
+  <div class="text-primary text-xs sm:text-sm md:text-base font-bold mt-2 whitespace-pre-line">
+██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+  </div>
+  <div class="text-accent text-sm mt-4">Full-Stack Developer & Problem Solver</div>
+</div>
 
-██╗   ██╗███████╗███╗   ███╗ █████╗ ███╗   ██╗    ███████╗██╗  ██╗ █████╗ ██╗  ██╗ █████╗ ██████╗ 
-██║   ██║██╔════╝████╗ ████║██╔══██╗████╗  ██║    ██╔════╝██║  ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
-██║   ██║███████╗██╔████╔██║███████║██╔██╗ ██║    ███████╗███████║███████║███████║███████║██████╔╝
-██║   ██║╚════██║██║╚██╔╝██║██╔══██║██║╚██╗██║    ╚════██║██╔══██║██╔══██║██╔══██║██╔══██║██╔══██╗
-╚██████╔╝███████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    ███████║██║  ██║██║  ██║██║  ██║██║  ██║██████╔╝
- ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+Available commands:
+• about      - Learn about me
+• skills     - View my technical skills  
+• projects   - Explore my projects
+• achievements - See my accomplishments
+• education  - Check my educational background
+• interests  - Discover my interests
+• contact    - Get in touch
+• help       - Show this help message
+• clear      - Clear the terminal
 
-                                     ██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
-                                     ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
-                                     ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
-                                     ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
-                                     ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
-                                     ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
-
-Full-Stack Developer & Problem Solver
-
-Type 'help' to see available commands or explore using the file structure on the left.
-`);
+Type any command to get started, or click on files in the sidebar!`);
         break;
       
       case 'ls':
@@ -358,53 +441,27 @@ Type 'help' for available commands.`, 'error');
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Mobile Header with Sidebar Toggle */}
-      <div className="lg:hidden flex items-center justify-between p-4 border-b border-border">
-        <h1 className="text-lg font-mono text-primary">usman@portfolio-terminal</h1>
-        <button
-          onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-          className="p-2 hover:bg-muted rounded transition-colors"
-        >
-          <span className="sr-only">Toggle sidebar</span>
-          <div className="w-5 h-5 flex flex-col justify-center">
-            <span className="block w-full h-0.5 bg-foreground mb-1"></span>
-            <span className="block w-full h-0.5 bg-foreground mb-1"></span>
-            <span className="block w-full h-0.5 bg-foreground"></span>
-          </div>
-        </button>
-      </div>
-
-      <div className="flex p-4 gap-4 min-h-screen">
+    <div className="h-screen bg-background overflow-hidden">
+      <div className="flex h-full">
         {/* Sidebar */}
-        <div className={`${sidebarCollapsed ? 'hidden' : 'block'} lg:block ${
-          sidebarCollapsed ? '' : 'fixed inset-0 z-50 lg:relative lg:inset-auto'
-        } lg:z-auto`}>
-          {!sidebarCollapsed && (
-            <div 
-              className="absolute inset-0 bg-black/50 lg:hidden" 
-              onClick={() => setSidebarCollapsed(true)}
-            />
-          )}
-          <div className="relative bg-background">
-            <Sidebar 
-              onFileClick={(command) => {
-                handleCommand(command);
-                // Auto-close sidebar on mobile after clicking
-                if (window.innerWidth < 1024) {
-                  setSidebarCollapsed(true);
-                }
-              }}
-              isCollapsed={false}
-              onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
-            />
-          </div>
+        <div className={`${sidebarCollapsed ? 'hidden' : 'block'} lg:block`}>
+          <Sidebar 
+            onFileClick={(command) => {
+              handleCommand(command);
+              // Auto-close sidebar on mobile after clicking
+              if (window.innerWidth < 1024) {
+                setSidebarCollapsed(true);
+              }
+            }}
+            isCollapsed={sidebarCollapsed}
+            onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+          />
         </div>
         
         {/* Main Content - Terminal Only */}
-        <div className="flex-1 flex flex-col h-screen">
+        <div className="flex-1 flex flex-col min-w-0">
           {/* Terminal */}
-          <div className="flex-1 flex flex-col terminal-window h-full">
+          <div className="flex-1 flex flex-col terminal-window h-full m-4 ml-2">
             <TerminalHeader title="usman@portfolio-terminal: ~" />
             <div className="flex-1 bg-terminal-bg border-l border-r border-b border-border overflow-hidden flex flex-col">
               <div 
@@ -427,11 +484,24 @@ Type 'help' for available commands.`, 'error');
                   </div>
                 )}
               </div>
-              <div className="border-t border-border bg-muted/10 p-2">
+              <div className="border-t border-border bg-muted/10 p-2 space-y-3">
                 <CommandPrompt 
                   onCommand={handleCommand}
                   isActive={!isProcessing}
                 />
+                
+                {/* Section Navigation Buttons */}
+                <div className="flex flex-wrap gap-2">
+                  {['about', 'skills', 'projects', 'achievements', 'education', 'interests', 'contact'].map((section) => (
+                    <button
+                      key={section}
+                      onClick={() => handleCommand(section)}
+                      className="px-3 py-1 text-xs bg-muted/30 border border-border rounded hover:bg-muted/50 transition-colors capitalize"
+                    >
+                      {section}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

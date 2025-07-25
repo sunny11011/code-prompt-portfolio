@@ -113,8 +113,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onFileClick, isCollapsed, onToggle })
   };
 
   return (
-    <div className={`bg-muted/20 border border-border rounded-lg transition-all duration-300 h-screen overflow-y-auto ${
-      isCollapsed ? 'w-12' : 'w-80'
+    <div className={`bg-muted/20 border border-border rounded-lg transition-all duration-300 h-full overflow-y-auto m-4 mr-0 ${
+      isCollapsed ? 'w-16' : 'w-96'
     }`}>
       <div className="p-4 border-b border-border">
         <div className="flex items-center justify-between">

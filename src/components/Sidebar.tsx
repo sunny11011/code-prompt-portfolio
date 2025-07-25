@@ -113,10 +113,10 @@ const Sidebar: React.FC<SidebarProps> = ({ onFileClick, isCollapsed, onToggle })
   };
 
   return (
-    <div className={`bg-muted/20 border-r border-border transition-all duration-300 h-screen overflow-y-auto ${
-      isCollapsed ? 'w-12' : 'w-64'
+    <div className={`bg-muted/20 border border-border rounded-lg transition-all duration-300 h-full overflow-y-auto ${
+      isCollapsed ? 'w-12' : 'w-80'
     }`}>
-      <div className="p-3 border-b border-border">
+      <div className="p-4 border-b border-border">
         <div className="flex items-center justify-between">
           {!isCollapsed && (
             <span className="text-sm font-mono text-muted-foreground">~/usman_portfolio/</span>
@@ -132,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFileClick, isCollapsed, onToggle })
         </div>
       </div>
       
-      <div className="py-3 px-2">
+      <div className="py-3 px-3">
         {fileStructure.map(item => renderFileItem(item))}
       </div>
     </div>

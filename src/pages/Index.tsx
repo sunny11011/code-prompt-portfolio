@@ -340,116 +340,108 @@ Type 'help' for available commands.`, 'error');
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="flex flex-col lg:flex-row">
-        {/* Mobile Header with Sidebar Toggle */}
-        <div className="lg:hidden flex items-center justify-between p-4 border-b border-border">
-          <h1 className="text-lg font-mono text-primary">usman@portfolio-terminal</h1>
-          <button
-            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            className="p-2 hover:bg-muted rounded transition-colors"
-          >
-            <span className="sr-only">Toggle sidebar</span>
-            <div className="w-5 h-5 flex flex-col justify-center">
-              <span className="block w-full h-0.5 bg-foreground mb-1"></span>
-              <span className="block w-full h-0.5 bg-foreground mb-1"></span>
-              <span className="block w-full h-0.5 bg-foreground"></span>
-            </div>
-          </button>
-        </div>
-
-        <div className="flex flex-1">
-          {/* Sidebar */}
-          <div className={`${sidebarCollapsed ? 'hidden' : 'block'} lg:block ${
-            sidebarCollapsed ? '' : 'fixed inset-0 z-50 lg:relative lg:inset-auto'
-          } lg:z-auto`}>
-            {!sidebarCollapsed && (
-              <div 
-                className="absolute inset-0 bg-black/50 lg:hidden" 
-                onClick={() => setSidebarCollapsed(true)}
-              />
-            )}
-            <div className="relative bg-background">
-              <Sidebar 
-                onFileClick={(command) => {
-                  handleCommand(command);
-                  // Auto-close sidebar on mobile after clicking
-                  if (window.innerWidth < 1024) {
-                    setSidebarCollapsed(true);
-                  }
-                }}
-                isCollapsed={false}
-                onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
-              />
-            </div>
+      {/* Mobile Header with Sidebar Toggle */}
+      <div className="lg:hidden flex items-center justify-between p-4 border-b border-border">
+        <h1 className="text-lg font-mono text-primary">usman@portfolio-terminal</h1>
+        <button
+          onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+          className="p-2 hover:bg-muted rounded transition-colors"
+        >
+          <span className="sr-only">Toggle sidebar</span>
+          <div className="w-5 h-5 flex flex-col justify-center">
+            <span className="block w-full h-0.5 bg-foreground mb-1"></span>
+            <span className="block w-full h-0.5 bg-foreground mb-1"></span>
+            <span className="block w-full h-0.5 bg-foreground"></span>
           </div>
-          
-          {/* Main Content */}
-          <div className="flex-1 p-2 lg:p-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="terminal-window">
-                <TerminalHeader title="usman@portfolio-terminal: ~" />
+        </button>
+      </div>
+
+      <div className="flex p-4 gap-4 min-h-screen">
+        {/* Sidebar */}
+        <div className={`${sidebarCollapsed ? 'hidden' : 'block'} lg:block ${
+          sidebarCollapsed ? '' : 'fixed inset-0 z-50 lg:relative lg:inset-auto'
+        } lg:z-auto`}>
+          {!sidebarCollapsed && (
+            <div 
+              className="absolute inset-0 bg-black/50 lg:hidden" 
+              onClick={() => setSidebarCollapsed(true)}
+            />
+          )}
+          <div className="relative bg-background">
+            <Sidebar 
+              onFileClick={(command) => {
+                handleCommand(command);
+                // Auto-close sidebar on mobile after clicking
+                if (window.innerWidth < 1024) {
+                  setSidebarCollapsed(true);
+                }
+              }}
+              isCollapsed={false}
+              onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+            />
+          </div>
+        </div>
+        
+        {/* Main Content - Terminal Only */}
+        <div className="flex-1 flex flex-col">
+          {/* Welcome Section - Only show when no active section */}
+          {currentSection === 'welcome' && (
+            <div className="flex-1 flex flex-col items-center justify-center text-center mb-6">
+              <div className="max-w-2xl mx-auto space-y-6">
+                <div className="space-y-4">
+                  <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Welcome to Usman's Portfolio
+                  </h1>
+                  <p className="text-lg text-muted-foreground">
+                    Full-Stack Developer & Problem Solver
+                  </p>
+                </div>
                 
-                <div className="p-3 lg:p-6">
-                  {currentSection === 'welcome' ? (
-                    <div className="min-h-[70vh]">
-                      <Welcome />
-                    </div>
-                  ) : (
-                    <>
-                      {/* Terminal Output for Commands */}
-                      <div 
-                        ref={outputRef}
-                        className="min-h-[60vh] max-h-[70vh] overflow-y-auto border border-border rounded bg-muted/10 p-2 lg:p-4 mb-4"
-                      >
-                        <TerminalOutput lines={outputLines} />
-                      </div>
-                      
-                      {/* Section Content */}
-                      <div className="min-h-[40vh] overflow-y-auto">
-                        {currentSection === 'about' && <About />}
-                        {currentSection === 'projects' && <Projects />}
-                        {currentSection === 'skills' && <Skills />}
-                        {currentSection === 'contact' && <Contact />}
-                        {currentSection === 'education' && <Education />}
-                        {currentSection === 'achievements' && <Achievements />}
-                        {currentSection === 'interests' && <Interests />}
-                      </div>
-                    </>
-                  )}
-                  
-                  {/* Command Prompt at bottom */}
-                  <div className="mt-4 border border-border rounded bg-muted/10 p-2 lg:p-4">
-                    <CommandPrompt 
-                      onCommand={handleCommand}
-                      isActive={!isProcessing}
-                    />
+                <div className="space-y-3">
+                  <p className="text-base text-foreground">
+                    Navigate through my portfolio using the terminal below or the file explorer on the left.
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {['about', 'skills', 'projects', 'education', 'achievements', 'interests', 'contact'].map((cmd) => (
+                      <span key={cmd} className="px-2 py-1 bg-muted rounded-md font-mono text-xs">
+                        {cmd}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
+            </div>
+          )}
 
-              {/* Quick Navigation */}
-              <div className="mt-4 lg:mt-6 flex flex-wrap gap-1 lg:gap-2 justify-center px-2">
-                {[
-                  { key: 'about', label: 'About' },
-                  { key: 'projects', label: 'Projects' },
-                  { key: 'skills', label: 'Skills' },
-                  { key: 'education', label: 'Education' },
-                  { key: 'achievements', label: 'Achievements' },
-                  { key: 'interests', label: 'Interests' },
-                  { key: 'contact', label: 'Contact' }
-                ].map(({ key, label }) => (
-                  <button
-                    key={key}
-                    onClick={() => handleCommand(key)}
-                    className={`px-2 lg:px-3 py-1 lg:py-2 text-xs lg:text-sm rounded border transition-colors ${
-                      currentSection === key
-                        ? 'bg-primary text-primary-foreground border-primary'
-                        : 'bg-muted text-muted-foreground border-border hover:border-primary'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
+          {/* Terminal */}
+          <div className="flex-1 flex flex-col terminal-window">
+            <TerminalHeader title="usman@portfolio-terminal: ~" />
+            <div className="flex-1 bg-terminal-bg border-l border-r border-b border-border overflow-hidden flex flex-col">
+              <div 
+                ref={outputRef}
+                className="flex-1 p-4 overflow-y-auto space-y-2 font-mono text-sm"
+                style={{ scrollBehavior: 'smooth' }}
+              >
+                <TerminalOutput lines={outputLines} />
+                
+                {/* Show styled content inside terminal for certain commands */}
+                {currentSection !== 'welcome' && (
+                  <div className="mt-4 p-4 bg-muted/20 rounded border border-border">
+                    {currentSection === 'about' && <About />}
+                    {currentSection === 'projects' && <Projects />}
+                    {currentSection === 'skills' && <Skills />}
+                    {currentSection === 'contact' && <Contact />}
+                    {currentSection === 'education' && <Education />}
+                    {currentSection === 'achievements' && <Achievements />}
+                    {currentSection === 'interests' && <Interests />}
+                  </div>
+                )}
+              </div>
+              <div className="border-t border-border bg-muted/10 p-2">
+                <CommandPrompt 
+                  onCommand={handleCommand}
+                  isActive={!isProcessing}
+                />
               </div>
             </div>
           </div>

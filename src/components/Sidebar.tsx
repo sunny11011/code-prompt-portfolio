@@ -21,16 +21,17 @@ const Sidebar: React.FC<SidebarProps> = ({ onFileClick, isCollapsed, onToggle })
   const fileStructure: FileItem[] = [
     { name: 'about.md', type: 'file', command: 'about', extension: 'md' },
     { name: 'skills.yaml', type: 'file', command: 'skills', extension: 'yaml' },
-    {
-      name: 'projects',
-      type: 'folder',
-      children: [
-        { name: 'live_sports_app.dart', type: 'file', command: 'projects', extension: 'dart' },
-        { name: 'movie_streaming_app.dart', type: 'file', command: 'projects', extension: 'dart' },
-        { name: 'amazon_clone.dart', type: 'file', command: 'projects', extension: 'dart' },
-        { name: 'data_dashboard.py', type: 'file', command: 'projects', extension: 'py' }
-      ]
-    },
+      {
+        name: 'projects',
+        type: 'folder',
+        children: [
+          { name: 'live_sports_app.dart', type: 'file', command: 'projects', extension: 'dart' },
+          { name: 'transport_management_app.dart', type: 'file', command: 'projects', extension: 'dart' },
+          { name: 'movie_streaming_app.dart', type: 'file', command: 'projects', extension: 'dart' },
+          { name: 'amazon_clone.dart', type: 'file', command: 'projects', extension: 'dart' },
+          { name: 'data_dashboard.py', type: 'file', command: 'projects', extension: 'py' }
+        ]
+      },
     { name: 'achievements.log', type: 'file', command: 'achievements', extension: 'log' },
     { name: 'education.md', type: 'file', command: 'education', extension: 'md' },
     { name: 'interests.json', type: 'file', command: 'interests', extension: 'json' },

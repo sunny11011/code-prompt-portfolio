@@ -34,7 +34,11 @@ const TerminalOutput: React.FC<TerminalOutputProps> = ({ lines, className = "" }
       default:
         return (
           <div className="text-foreground whitespace-pre-wrap">
-            {line.content}
+            {line.content.includes('<div class="ascii-art">') ? (
+              <div dangerouslySetInnerHTML={{ __html: line.content }} />
+            ) : (
+              line.content
+            )}
           </div>
         );
     }

@@ -18,13 +18,65 @@ const Index = () => {
   const [currentSection, setCurrentSection] = useState<Section>('welcome');
   const [outputLines, setOutputLines] = useState<TerminalLine[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(window.innerWidth < 1024);
+  const [showSectionContent, setShowSectionContent] = useState(false);
   const outputRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Show welcome screen initially with ASCII art
-    handleCommand('welcome');
+    showWelcomeScreen();
   }, []);
+
+  const showWelcomeScreen = () => {
+    const welcomeLines: TerminalLine[] = [
+      {
+        id: 'welcome-ascii',
+        type: 'output',
+        content: `
+┌────────────────────────────────────────┐
+│                                        │
+│    ██╗   ██╗███████╗███╗   ███╗ █████╗ ███╗   ██╗    
+│    ██║   ██║██╔════╝████╗ ████║██╔══██╗████╗  ██║    
+│    ██║   ██║███████╗██╔████╔██║███████║██╔██╗ ██║    
+│    ██║   ██║╚════██║██║╚██╔╝██║██╔══██║██║╚██╗██║    
+│    ╚██████╔╝███████║██║ ╚═╝ ██║██║  ██║██║ ╚████║    
+│     ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    
+│                                        │
+│               ███████╗██╗  ██╗ █████╗ ██╗  ██╗ █████╗ ██████╗ 
+│               ██╔════╝██║  ██║██╔══██╗██║  ██║██╔══██╗██╔══██╗
+│               ███████╗███████║███████║███████║███████║██████╔╝
+│               ╚════██║██╔══██║██╔══██║██╔══██║██╔══██║██╔══██╗
+│               ███████║██║  ██║██║  ██║██║  ██║██║  ██║██████╔╝
+│               ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+│                                        │
+│              ██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
+│              ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
+│              ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
+│              ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
+│              ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
+│              ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
+│                                        │
+└────────────────────────────────────────┘
+
+Available commands:
+→ about      - Learn about me
+→ skills     - View my technical skills  
+→ projects   - Explore my projects
+→ achievements - See my accomplishments
+→ education  - Check my educational background
+→ interests  - Discover my interests
+→ contact    - Get in touch
+→ help       - Show help message
+→ clear      - Clear the terminal
+
+Type any command to get started, or click on files in the sidebar!`,
+        timestamp: new Date()
+      }
+    ];
+    setOutputLines(welcomeLines);
+    setCurrentSection('welcome');
+    setShowSectionContent(false);
+  };
 
   useEffect(() => {
     // Auto-scroll to bottom when new output is added
@@ -59,57 +111,67 @@ const Index = () => {
     setIsProcessing(true);
     addCommandLine(command);
 
+    // Clear previous section content
+    setShowSectionContent(false);
+
     // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 300));
 
     switch (cmd) {
       case 'about':
-        addOutputLine('Loading personal information...\n');
+        addOutputLine('→ Loading personal information...');
         setTimeout(() => {
           setCurrentSection('about');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'projects':
-        addOutputLine('Fetching project portfolio...\n');
+        addOutputLine('→ Fetching project portfolio...');
         setTimeout(() => {
           setCurrentSection('projects');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'skills':
-        addOutputLine('Analyzing technical capabilities...\n');
+        addOutputLine('→ Analyzing technical capabilities...');
         setTimeout(() => {
           setCurrentSection('skills');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'contact':
-        addOutputLine('Displaying contact information...\n');
+        addOutputLine('→ Displaying contact information...');
         setTimeout(() => {
           setCurrentSection('contact');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'education':
-        addOutputLine('Loading educational background...\n');
+        addOutputLine('→ Loading educational background...');
         setTimeout(() => {
           setCurrentSection('education');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'achievements':
-        addOutputLine('Analyzing achievement records...\n');
+        addOutputLine('→ Analyzing achievement records...');
         setTimeout(() => {
           setCurrentSection('achievements');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'interests':
-        addOutputLine('Loading personal interests...\n');
+        addOutputLine('→ Loading personal interests...');
         setTimeout(() => {
           setCurrentSection('interests');
-        }, 800);
+          setShowSectionContent(true);
+        }, 600);
         break;
       
       case 'help':
@@ -136,34 +198,12 @@ Use these commands to navigate through my portfolio.
       
       case 'clear':
         setOutputLines([]);
+        setShowSectionContent(false);
         break;
       
       case 'home':
       case 'welcome':
-        setCurrentSection('welcome');
-        addOutputLine(`
-╔════════════════════════════════════════╗
-║                                        ║
-║           USMAN SHAHAB                 ║
-║           PORTFOLIO                    ║
-║                                        ║
-║    Full-Stack Developer & Problem      ║
-║            Solver                      ║
-║                                        ║
-╚════════════════════════════════════════╝
-
-Available commands:
-• about      - Learn about me
-• skills     - View my technical skills  
-• projects   - Explore my projects
-• achievements - See my accomplishments
-• education  - Check my educational background
-• interests  - Discover my interests
-• contact    - Get in touch
-• help       - Show this help message
-• clear      - Clear the terminal
-
-Type any command to get started, or click on files in the sidebar!`);
+        showWelcomeScreen();
         break;
       
       case 'ls':
@@ -363,8 +403,16 @@ Type 'help' for available commands.`, 'error');
   return (
     <div className="h-screen bg-background overflow-hidden">
       <div className="flex h-full">
+        {/* Sidebar Overlay for Mobile */}
+        {!sidebarCollapsed && (
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+            onClick={() => setSidebarCollapsed(true)}
+          />
+        )}
+        
         {/* Sidebar */}
-        <div className={`${sidebarCollapsed ? 'hidden' : 'block'} lg:block`}>
+        <div className={`${sidebarCollapsed ? 'hidden lg:block' : 'block'} ${!sidebarCollapsed ? 'fixed lg:relative z-50' : ''}`}>
           <Sidebar 
             onFileClick={(command) => {
               handleCommand(command);
@@ -378,22 +426,26 @@ Type 'help' for available commands.`, 'error');
           />
         </div>
         
-        {/* Main Content - Terminal Only */}
-        <div className="flex-1 flex flex-col min-w-0">
+        {/* Main Content - Terminal */}
+        <div className="flex-1 flex flex-col min-w-0 h-screen">
           {/* Terminal */}
-          <div className="flex-1 flex flex-col terminal-window h-full m-4 ml-2">
-            <TerminalHeader title="usman@portfolio-terminal: ~" />
-            <div className="flex-1 bg-terminal-bg border-l border-r border-b border-border overflow-hidden flex flex-col">
+          <div className="flex-1 flex flex-col terminal-window mx-2 my-2 lg:mx-4 lg:my-4">
+            <TerminalHeader 
+              title="usman@portfolio-terminal: ~" 
+              onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+              showMenu={true}
+            />
+            <div className="flex-1 bg-background border-l border-r border-b border-border overflow-hidden flex flex-col">
               <div 
                 ref={outputRef}
-                className="flex-1 p-2 sm:p-4 overflow-y-auto space-y-2 font-mono text-sm"
+                className="flex-1 px-2 py-3 lg:px-4 lg:py-4 overflow-y-auto font-mono text-sm"
                 style={{ scrollBehavior: 'smooth' }}
               >
                 <TerminalOutput lines={outputLines} />
                 
                 {/* Show styled content inside terminal for certain commands */}
-                {currentSection !== 'welcome' && (
-                  <div className="mt-4 p-2 sm:p-4 bg-muted/20 rounded border border-border">
+                {showSectionContent && currentSection !== 'welcome' && (
+                  <div className="mt-6 p-3 lg:p-4 bg-card/30 rounded border border-border/50">
                     {currentSection === 'about' && <About />}
                     {currentSection === 'projects' && <Projects />}
                     {currentSection === 'skills' && <Skills />}
@@ -404,7 +456,7 @@ Type 'help' for available commands.`, 'error');
                   </div>
                 )}
               </div>
-              <div className="border-t border-border bg-muted/10 p-2">
+              <div className="border-t border-border bg-muted/10 px-2 py-2 lg:px-3 lg:py-2">
                 <CommandPrompt 
                   onCommand={handleCommand}
                   isActive={!isProcessing}
@@ -413,14 +465,14 @@ Type 'help' for available commands.`, 'error');
             </div>
           </div>
           
-          {/* Section Navigation Buttons - Outside Terminal */}
-          <div className="mx-4 mb-4 ml-2">
-            <div className="flex flex-wrap gap-2 p-3 bg-muted/20 rounded border border-border">
+          {/* Section Navigation Buttons - Below Terminal */}
+          <div className="mx-2 mb-2 lg:mx-4 lg:mb-4">
+            <div className="flex flex-wrap gap-1 lg:gap-2 p-2 lg:p-3 bg-card/20 rounded border border-border">
               {['about', 'skills', 'projects', 'achievements', 'education', 'interests', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => handleCommand(section)}
-                  className="px-3 py-1 text-xs bg-muted/30 border border-border rounded hover:bg-muted/50 transition-colors capitalize"
+                  className="px-2 py-1 lg:px-3 lg:py-1 text-xs bg-muted/30 border border-border rounded hover:bg-primary/20 hover:border-primary/30 transition-all duration-200 capitalize"
                 >
                   {section}
                 </button>

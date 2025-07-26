@@ -27,25 +27,25 @@ const Achievements: React.FC = () => {
               
               <div className="pl-4 space-y-2 font-mono text-sm">
                 <TypewriterText 
-                  text="  ├─ Total Projects Completed: 15+"
+                  text="  → Total Projects Completed: 15+"
                   speed={15}
                   delay={1500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ On-time Delivery Rate: 98%"
+                  text="  → On-time Delivery Rate: 98%"
                   speed={15}
                   delay={2000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Client Satisfaction: 4.9/5.0"
+                  text="  → Client Satisfaction: 4.9/5.0"
                   speed={15}
                   delay={2500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  └─ Budget Efficiency: 95% avg"
+                  text="  → Budget Efficiency: 95% avg"
                   speed={15}
                   delay={3000}
                   className="text-muted-foreground"
@@ -65,37 +65,37 @@ const Achievements: React.FC = () => {
               
               <div className="pl-4 space-y-2 font-mono text-sm">
                 <TypewriterText 
-                  text="  ├─ Performance Optimization Expert"
+                  text="  → Performance Optimization Expert"
                   speed={15}
                   delay={4000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  │   └─ Average 40% load time reduction"
+                  text="    → Average 40% load time reduction"
                   speed={15}
                   delay={4500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Offline-First Architecture Specialist"
+                  text="  → Offline-First Architecture Specialist"
                   speed={15}
                   delay={5000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  │   └─ Implemented PWA features in 8+ apps"
+                  text="    → Implemented PWA features in 8+ apps"
                   speed={15}
                   delay={5500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  └─ Cross-Platform Development"
+                  text="  → Cross-Platform Development"
                   speed={15}
                   delay={6000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="      └─ React Native, Flutter expertise"
+                  text="    → React Native, Flutter expertise"
                   speed={15}
                   delay={6500}
                   className="text-muted-foreground"
@@ -115,25 +115,25 @@ const Achievements: React.FC = () => {
               
               <div className="pl-4 space-y-2 font-mono text-sm">
                 <TypewriterText 
-                  text="  ├─ Led development teams of 3-8 members"
+                  text="  → Led development teams of 3-8 members"
                   speed={15}
                   delay={7500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Mentored 12+ junior developers"
+                  text="  → Mentored 12+ junior developers"
                   speed={15}
                   delay={8000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Established CI/CD pipelines (5 companies)"
+                  text="  → Established CI/CD pipelines (5 companies)"
                   speed={15}
                   delay={8500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  └─ Code review accuracy: 99.2%"
+                  text="  → Code review accuracy: 99.2%"
                   speed={15}
                   delay={9000}
                   className="text-muted-foreground"
@@ -153,31 +153,31 @@ const Achievements: React.FC = () => {
               
               <div className="pl-4 space-y-2 font-mono text-sm">
                 <TypewriterText 
-                  text="  ├─ AWS Solutions Architect (Professional)"
+                  text="  → AWS Solutions Architect (Professional)"
                   speed={15}
                   delay={10000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Google Cloud Professional Developer"
+                  text="  → Google Cloud Professional Developer"
                   speed={15}
                   delay={10500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Employee of the Year (2023)"
+                  text="  → Employee of the Year (2023)"
                   speed={15}
                   delay={11000}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  ├─ Open Source Contributor (500+ commits)"
+                  text="  → Open Source Contributor (500+ commits)"
                   speed={15}
                   delay={11500}
                   className="text-muted-foreground"
                 />
                 <TypewriterText 
-                  text="  └─ Tech Speaker (8 conferences)"
+                  text="  → Tech Speaker (8 conferences)"
                   speed={15}
                   delay={12000}
                   className="text-muted-foreground"

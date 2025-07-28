@@ -431,7 +431,7 @@ Type 'help' for available commands.`, 'error');
             <div className="flex-1 bg-background border-l border-r border-b border-border overflow-hidden flex flex-col">
               <div 
                 ref={outputRef}
-                className="flex-1 px-2 py-3 lg:px-4 lg:py-4 overflow-y-auto font-mono text-sm"
+                className="flex-1 px-4 py-3 lg:px-6 lg:py-4 overflow-y-auto font-mono text-sm"
                 style={{ scrollBehavior: 'smooth' }}
               >
                 <TerminalOutput lines={outputLines} />
@@ -460,7 +460,7 @@ Type 'help' for available commands.`, 'error');
           
           {/* Section Navigation Buttons - Below Terminal */}
           <div className="mx-2 mb-2 lg:mx-4 lg:mb-4">
-            <div className="flex flex-wrap gap-1 lg:gap-2 p-2 lg:p-3 bg-card/20 rounded border border-border">
+            <div className="flex flex-wrap justify-center gap-1 lg:gap-2 p-2 lg:p-3 bg-card/20 rounded border border-border">
               {['about', 'skills', 'projects', 'achievements', 'education', 'interests', 'contact'].map((section) => (
                 <button
                   key={section}

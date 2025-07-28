@@ -174,7 +174,61 @@
   }
   
   .terminal-header {
-    @apply bg-secondary px-4 py-2 flex items-center gap-2;
+    @apply bg-secondary px-3 py-2 lg:px-4 lg:py-2 flex items-center gap-2;
+  }
+
+  /* ASCII Art responsive styling */
+  .ascii-art {
+    @apply text-center;
+    font-family: 'Source Code Pro', monospace;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .ascii-art > div {
+    @apply overflow-x-auto;
+  }
+
+  @media (max-width: 390px) {
+    .ascii-art {
+      font-size: 0.4rem;
+      line-height: 0.9;
+    }
+  }
+
+  @media (min-width: 391px) and (max-width: 480px) {
+    .ascii-art {
+      font-size: 0.45rem;
+      line-height: 0.95;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 640px) {
+    .ascii-art {
+      font-size: 0.55rem;
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .ascii-art {
+      font-size: 0.65rem;
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .ascii-art {
+      font-size: 0.75rem;
+      line-height: 1.1;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .ascii-art {
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
   }
   
   .terminal-button {

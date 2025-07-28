@@ -431,7 +431,7 @@ Type 'help' for available commands.`, 'error');
             <div className="flex-1 bg-background border-l border-r border-b border-border overflow-hidden flex flex-col">
               <div 
                 ref={outputRef}
-                className="flex-1 px-6 py-3 lg:px-8 lg:py-4 overflow-y-auto font-mono text-sm"
+                className="flex-1 px-4 py-3 lg:px-6 lg:py-4 overflow-y-auto font-mono text-sm"
                 style={{ scrollBehavior: 'smooth' }}
               >
                 <TerminalOutput lines={outputLines} />
@@ -449,7 +449,7 @@ Type 'help' for available commands.`, 'error');
                   </div>
                 )}
               </div>
-              <div className="border-t border-border bg-muted/10 px-6 py-2 lg:px-8 lg:py-2">
+              <div className="border-t border-border bg-muted/10 px-2 py-2 lg:px-3 lg:py-2">
                 <CommandPrompt 
                   onCommand={handleCommand}
                   isActive={!isProcessing}
